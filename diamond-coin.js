@@ -2,6 +2,7 @@ const sdk = require("@defillama/sdk");
 const {pool2Exports} = require("../helper/pool2");
 
 const token = "0xDDa0F0E1081b8d64aB1D64621eb2679F93086705";
+const emissionRewardPool = "0xDDa0F0E1081b8d64aB1D64621eb2679F93086705";
 
 const DiamondLPs = [
     "0xf5e8B220843EC7114B91AfF0D25342c24eB953b5", // DIAMOND-FTM 
@@ -9,8 +10,8 @@ const DiamondLPs = [
 ]
 
 module.exports = {
-    ftm: {
+    fantom: {
         tvl: async () => ({}),
-        pool2: pool2Exports(DiamondLPs, "ftm", addr=>`ftm:${addr}`)
+        pool2: pool2Exports(emissionRewardPool, DiamondLPs, "fantom", addr=>`fantom:${addr}`)
     }
 }
